@@ -7,13 +7,22 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
+import com.voluntiex.voluntiexBackend.utils.JwtTokenFilter;
+
 @Configuration
 public class SecurityConfig {
+
+    private final JwtTokenFilter jwtTokenFilter;
+
+    public SecurityConfig(JwtTokenFilter jwtTokenFilter) {
+        this.jwtTokenFilter = jwtTokenFilter;
+    }
 
     @Bean
     public PasswordEncoder passwordEncoder() {
@@ -41,7 +50,8 @@ public class SecurityConfig {
                   .requestMatchers("/oportunidades", "/oportunidades/all", "/auth/login", "/auth/register", "/").permitAll()  
                   .anyRequest().authenticated()) 
           .formLogin(login -> login.disable())  
-          .httpBasic(basic -> basic.disable()); 
+          .httpBasic(basic -> basic.disable())
+          .addFilterBefore(jwtTokenFilter, UsernamePasswordAuthenticationFilter.class);
 
         return http.build();  
     }
