@@ -1,5 +1,7 @@
 package com.voluntiex.voluntiexBackend.services;
 
+import java.util.Locale;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -17,16 +19,26 @@ public class AuthService {
     private PasswordEncoder passwordEncoder;
 
     public Usuario register(Usuario usuario) {
+        String normalizedEmail = normalizeEmail(usuario.getEmail());
+        if (usuarioRepository.existsByEmailIgnoreCase(normalizedEmail)) {
+            throw new IllegalArgumentException("El correo ya está registrado");
+        }
+
+        usuario.setEmail(normalizedEmail);
         usuario.setPassword(passwordEncoder.encode(usuario.getPassword()));
         return usuarioRepository.save(usuario);
     }
 
     public boolean login(String email, String password) {
+        return usuarioRepository.findByEmailIgnoreCase(normalizeEmail(email))
+                .map(usuario -> passwordEncoder.matches(password, usuario.getPassword()))
+                .orElse(false);
+    }
 
-        Usuario usuario = usuarioRepository.findByEmail(email);
-        if (usuario != null && passwordEncoder.matches(password, usuario.getPassword())) {
-            return true;
+    private String normalizeEmail(String email) {
+        if (email == null || email.isBlank()) {
+            throw new IllegalArgumentException("El correo es obligatorio");
         }
-        return false;
+        return email.trim().toLowerCase(Locale.ROOT);
     }
 }

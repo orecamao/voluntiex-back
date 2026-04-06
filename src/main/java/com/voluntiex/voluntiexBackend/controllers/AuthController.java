@@ -54,6 +54,9 @@ public class AuthController {
                 response.put("message", "Credenciales incorrectas");
                 return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(response);
             }
+        } catch (IllegalArgumentException e) {
+            response.put("message", e.getMessage());
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
         } catch (Exception e) {
             e.printStackTrace();
             response.put("message", "Error interno del servidor");
