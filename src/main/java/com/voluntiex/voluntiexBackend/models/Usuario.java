@@ -1,5 +1,7 @@
 package com.voluntiex.voluntiexBackend.models;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -24,6 +26,7 @@ public class Usuario {
     private String nombre;
     @Column(unique = true, nullable = false)
     private String email;
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @Column(nullable = false)
     private String password;
     private String rol;
