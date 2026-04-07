@@ -5,6 +5,8 @@ import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -13,6 +15,7 @@ import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -37,10 +40,19 @@ public class Oportunidad {
     private String tipo;
     private String requisitos;
     private String nombreUsuario;
+    private String tipoCreador;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private EstadoOportunidad estado;
 
     @ManyToOne
-    @JoinColumn(name = "organizacion_id", nullable = false)
+    @JoinColumn(name = "organizacion_id")
     private Organizacion organizacion;
+
+    @ManyToOne
+    @JoinColumn(name = "beneficiario_creador_id")
+    private Beneficiario beneficiarioCreador;
 
     @ManyToMany
     @JoinTable(
@@ -49,4 +61,10 @@ public class Oportunidad {
             inverseJoinColumns = @JoinColumn(name = "beneficiario_id")
     )
     private List<Beneficiario> beneficiarios;
+
+    @Transient
+    private Long totalSolicitudes;
+
+    @Transient
+    private Boolean tieneSolicitudes;
 }

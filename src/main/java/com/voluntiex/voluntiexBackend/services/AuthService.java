@@ -41,7 +41,7 @@ public class AuthService {
         String normalizedEmail = normalizeEmail(usuario.getEmail());
         String normalizedTipo = normalizeTipo(usuario.getTipo());
         if (usuarioRepository.existsByEmailIgnoreCase(normalizedEmail)) {
-            throw new IllegalArgumentException("El correo ya estÃ¡ registrado");
+            throw new IllegalArgumentException("El correo ya esta registrado");
         }
 
         usuario.setEmail(normalizedEmail);
@@ -55,7 +55,7 @@ public class AuthService {
 
     public Optional<Usuario> authenticate(String email, String password) {
         if (password == null || password.isBlank()) {
-            throw new IllegalArgumentException("La contraseÃ±a es obligatoria");
+            throw new IllegalArgumentException("La contrasena es obligatoria");
         }
 
         return usuarioRepository.findByEmailIgnoreCase(normalizeEmail(email))
@@ -65,6 +65,27 @@ public class AuthService {
     public Usuario getUserByEmail(String email) {
         return usuarioRepository.findByEmailIgnoreCase(normalizeEmail(email))
                 .orElseThrow(() -> new IllegalArgumentException("Usuario no encontrado"));
+    }
+
+    @Transactional
+    public void changePassword(String email, String currentPassword, String newPassword) {
+        if (currentPassword == null || currentPassword.isBlank()) {
+            throw new IllegalArgumentException("La contrasena actual es obligatoria");
+        }
+        if (newPassword == null || newPassword.isBlank()) {
+            throw new IllegalArgumentException("La nueva contrasena es obligatoria");
+        }
+
+        Usuario usuario = getUserByEmail(email);
+        if (!passwordEncoder.matches(currentPassword, usuario.getPassword())) {
+            throw new IllegalArgumentException("La contrasena actual es incorrecta");
+        }
+        if (passwordEncoder.matches(newPassword, usuario.getPassword())) {
+            throw new IllegalArgumentException("La nueva contrasena no puede ser igual a la actual");
+        }
+
+        usuario.setPassword(passwordEncoder.encode(newPassword));
+        usuarioRepository.save(usuario);
     }
 
     private String normalizeEmail(String email) {
@@ -86,7 +107,7 @@ public class AuthService {
         if (!normalizedTipo.equals("voluntario")
                 && !normalizedTipo.equals("beneficiario")
                 && !normalizedTipo.equals("organizacion")) {
-            throw new IllegalArgumentException("Tipo de usuario invÃ¡lido: " + tipo);
+            throw new IllegalArgumentException("Tipo de usuario invalido: " + tipo);
         }
 
         return normalizedTipo;
@@ -98,22 +119,25 @@ public class AuthService {
                 Voluntario voluntario = new Voluntario();
                 voluntario.setNombre(usuario.getNombre());
                 voluntario.setEmail(usuario.getEmail());
+                voluntario.setUsuario(usuario);
                 voluntarioRepository.save(voluntario);
                 break;
             case "beneficiario":
                 Beneficiario beneficiario = new Beneficiario();
                 beneficiario.setNombre(usuario.getNombre());
                 beneficiario.setContacto(usuario.getEmail());
+                beneficiario.setUsuario(usuario);
                 beneficiarioRepository.save(beneficiario);
                 break;
             case "organizacion":
                 Organizacion organizacion = new Organizacion();
                 organizacion.setNombre(usuario.getNombre());
                 organizacion.setEmail(usuario.getEmail());
+                organizacion.setUsuario(usuario);
                 organizacionRepository.save(organizacion);
                 break;
             default:
-                throw new IllegalArgumentException("Tipo de usuario invÃ¡lido: " + usuario.getTipo());
+                throw new IllegalArgumentException("Tipo de usuario invalido: " + usuario.getTipo());
         }
     }
 }

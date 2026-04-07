@@ -1,10 +1,16 @@
 package com.voluntiex.voluntiexBackend.controllers;
 
 import java.time.LocalDate;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.AccessDeniedException;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,9 +31,25 @@ public class OportunidadController {
     @Autowired
     private OportunidadService oportunidadService;
 
+    @GetMapping("/mias")
+    public ResponseEntity<?> getMyOportunidades(Authentication authentication) {
+        try {
+            return ResponseEntity.ok(oportunidadService.getMyOportunidades(authentication));
+        } catch (AccessDeniedException e) {
+            return buildErrorResponse(HttpStatus.FORBIDDEN, e.getMessage());
+        }
+    }
+
     @PostMapping
-    public Oportunidad createOportunidad(@RequestBody Oportunidad oportunidad) {
-        return oportunidadService.createOportunidad(oportunidad);
+    public ResponseEntity<?> createOportunidad(@RequestBody Oportunidad oportunidad, Authentication authentication) {
+        try {
+            return ResponseEntity.status(HttpStatus.CREATED)
+                    .body(oportunidadService.createOportunidad(oportunidad, authentication));
+        } catch (AccessDeniedException e) {
+            return buildErrorResponse(HttpStatus.FORBIDDEN, e.getMessage());
+        } catch (IllegalArgumentException e) {
+            return buildErrorResponse(HttpStatus.BAD_REQUEST, e.getMessage());
+        }
     }
 
     @GetMapping("/all")
@@ -41,17 +63,30 @@ public class OportunidadController {
     }
 
     @PutMapping("/{id}")
-    public Oportunidad updateOportunidad(@PathVariable Long id, @RequestBody Oportunidad oportunidad) {
-        return oportunidadService.updateOportunidad(id, oportunidad);
+    public ResponseEntity<?> updateOportunidad(
+            @PathVariable Long id,
+            @RequestBody Oportunidad oportunidad,
+            Authentication authentication) {
+        try {
+            return ResponseEntity.ok(oportunidadService.updateOportunidad(id, oportunidad, authentication));
+        } catch (AccessDeniedException e) {
+            return buildErrorResponse(HttpStatus.FORBIDDEN, e.getMessage());
+        } catch (IllegalArgumentException e) {
+            return buildErrorResponse(HttpStatus.BAD_REQUEST, e.getMessage());
+        }
     }
 
     @DeleteMapping("/{id}")
-    public String deleteOportunidad(@PathVariable Long id) {
-        boolean ok = oportunidadService.deleteOportunidad(id);
-        if (ok) {
-            return "Oportunidad con id " + id + " ha sido eliminada.";
-        } else {
-            return "Error al eliminar oportunidad con id " + id + ". Puede que no exista.";
+    public ResponseEntity<?> deleteOportunidad(@PathVariable Long id, Authentication authentication) {
+        try {
+            oportunidadService.deleteOportunidad(id, authentication);
+            Map<String, String> response = new HashMap<>();
+            response.put("message", "Oportunidad cancelada correctamente");
+            return ResponseEntity.ok(response);
+        } catch (AccessDeniedException e) {
+            return buildErrorResponse(HttpStatus.FORBIDDEN, e.getMessage());
+        } catch (IllegalArgumentException e) {
+            return buildErrorResponse(HttpStatus.BAD_REQUEST, e.getMessage());
         }
     }
 
@@ -67,5 +102,11 @@ public class OportunidadController {
             @RequestParam(value = "requisitos", required = false) String requisitos
     ) {
         return oportunidadService.filtrarOportunidades(titulo, categoria, ubicacion, fechaInicio, fechaFin, duracion, tipo, requisitos);
+    }
+
+    private ResponseEntity<Map<String, String>> buildErrorResponse(HttpStatus status, String message) {
+        Map<String, String> response = new HashMap<>();
+        response.put("message", message);
+        return ResponseEntity.status(status).body(response);
     }
 }
