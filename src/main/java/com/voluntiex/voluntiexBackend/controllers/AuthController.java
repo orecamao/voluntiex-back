@@ -6,6 +6,8 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -43,11 +45,20 @@ public class AuthController {
         Map<String, String> response = new HashMap<>();
 
         try {
-            if (authService.login(loginRequest.getEmail(), loginRequest.getPassword())) {
-                String token = JwtTokenUtil.generateToken(loginRequest.getEmail());
+            Usuario usuario = authService.authenticate(loginRequest.getEmail(), loginRequest.getPassword()).orElse(null);
+            if (usuario != null) {
+                String token = JwtTokenUtil.generateToken(usuario.getEmail());
 
                 response.put("message", "Login exitoso");
-                response.put("token", "Bearer " + token); 
+                response.put("token", "Bearer " + token);
+                response.put("nombre", usuario.getNombre());
+                response.put("email", usuario.getEmail());
+                if (usuario.getRol() != null) {
+                    response.put("rol", usuario.getRol());
+                }
+                if (usuario.getTipo() != null) {
+                    response.put("tipo", usuario.getTipo());
+                }
     
                 return ResponseEntity.ok(response);
             } else {
@@ -61,6 +72,32 @@ public class AuthController {
             e.printStackTrace();
             response.put("message", "Error interno del servidor");
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
+        }
+    }
+
+    @GetMapping("/me")
+    public ResponseEntity<Map<String, String>> getCurrentUser(Authentication authentication) {
+        Map<String, String> response = new HashMap<>();
+
+        if (authentication == null || authentication.getName() == null) {
+            response.put("message", "No autenticado");
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(response);
+        }
+
+        try {
+            Usuario usuario = authService.getUserByEmail(authentication.getName());
+            response.put("nombre", usuario.getNombre());
+            response.put("email", usuario.getEmail());
+            if (usuario.getRol() != null) {
+                response.put("rol", usuario.getRol());
+            }
+            if (usuario.getTipo() != null) {
+                response.put("tipo", usuario.getTipo());
+            }
+            return ResponseEntity.ok(response);
+        } catch (IllegalArgumentException e) {
+            response.put("message", e.getMessage());
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
         }
     }
 }
