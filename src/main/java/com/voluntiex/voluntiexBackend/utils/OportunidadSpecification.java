@@ -4,6 +4,7 @@ import java.time.LocalDate;
 
 import org.springframework.data.jpa.domain.Specification;
 
+import com.voluntiex.voluntiexBackend.models.EstadoOportunidad;
 import com.voluntiex.voluntiexBackend.models.Oportunidad;
 
 import jakarta.persistence.criteria.CriteriaBuilder;
@@ -11,6 +12,11 @@ import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.criteria.Root;
 
 public class OportunidadSpecification {
+
+    public static Specification<Oportunidad> filterByEstadoActiva() {
+        return (Root<Oportunidad> root, CriteriaQuery<?> query, CriteriaBuilder criteriaBuilder) ->
+                criteriaBuilder.equal(root.get("estado"), EstadoOportunidad.ACTIVA);
+    }
 
     public static Specification<Oportunidad> filterByTitulo(String titulo) {
         return (Root<Oportunidad> root, CriteriaQuery<?> query, CriteriaBuilder criteriaBuilder) -> {

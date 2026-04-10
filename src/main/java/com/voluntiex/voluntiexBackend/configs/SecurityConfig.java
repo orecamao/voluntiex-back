@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -47,7 +48,10 @@ public class SecurityConfig {
         http
           .csrf(csrf -> csrf.disable())
           .authorizeHttpRequests(authz -> authz
-                  .requestMatchers("/oportunidades", "/oportunidades/all", "/auth/login", "/auth/register", "/").permitAll()  
+                  .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
+                  .requestMatchers(HttpMethod.GET, "/oportunidades/mias").authenticated()
+                  .requestMatchers(HttpMethod.GET, "/", "/oportunidades", "/oportunidades/**").permitAll()
+                  .requestMatchers(HttpMethod.POST, "/auth/login", "/auth/register").permitAll()
                   .anyRequest().authenticated()) 
           .formLogin(login -> login.disable())  
           .httpBasic(basic -> basic.disable())
