@@ -49,6 +49,7 @@ public class SecurityConfig {
           .csrf(csrf -> csrf.disable())
           .authorizeHttpRequests(authz -> authz
                   .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
+                  .requestMatchers("/swagger-ui/**", "/swagger-ui.html", "/v3/api-docs/**").permitAll()
                   .requestMatchers(HttpMethod.GET, "/oportunidades/mias").authenticated()
                   .requestMatchers(HttpMethod.GET, "/", "/oportunidades", "/oportunidades/**").permitAll()
                   .requestMatchers(HttpMethod.POST, "/auth/login", "/auth/register").permitAll()
