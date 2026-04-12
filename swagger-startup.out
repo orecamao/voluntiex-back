@@ -1,0 +1,71 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.2)
+
+2026-04-11T20:19:59.334-05:00  INFO 31268 --- [voluntiexBackend] [  restartedMain] c.v.v.VoluntiexBackendApplication        : Starting VoluntiexBackendApplication using Java 21.0.3 with PID 31268 (C:\Users\orica\Desktop\TFM\backend\voluntiexBackend\target\classes started by Oriel in C:\Users\orica\Desktop\TFM\backend\voluntiexBackend)
+2026-04-11T20:19:59.337-05:00  INFO 31268 --- [voluntiexBackend] [  restartedMain] c.v.v.VoluntiexBackendApplication        : No active profile set, falling back to 1 default profile: "default"
+2026-04-11T20:19:59.376-05:00  INFO 31268 --- [voluntiexBackend] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-04-11T20:19:59.377-05:00  INFO 31268 --- [voluntiexBackend] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-04-11T20:20:00.351-05:00  INFO 31268 --- [voluntiexBackend] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-11T20:20:00.413-05:00  INFO 31268 --- [voluntiexBackend] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 54 ms. Found 6 JPA repository interfaces.
+2026-04-11T20:20:00.935-05:00  INFO 31268 --- [voluntiexBackend] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-04-11T20:20:00.949-05:00  INFO 31268 --- [voluntiexBackend] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-11T20:20:00.949-05:00  INFO 31268 --- [voluntiexBackend] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2026-04-11T20:20:01.003-05:00  INFO 31268 --- [voluntiexBackend] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-04-11T20:20:01.004-05:00  INFO 31268 --- [voluntiexBackend] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1626 ms
+2026-04-11T20:20:01.144-05:00  INFO 31268 --- [voluntiexBackend] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-04-11T20:20:01.192-05:00  INFO 31268 --- [voluntiexBackend] [  restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.5.Final
+2026-04-11T20:20:01.222-05:00  INFO 31268 --- [voluntiexBackend] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-04-11T20:20:01.442-05:00  INFO 31268 --- [voluntiexBackend] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-04-11T20:20:01.470-05:00  INFO 31268 --- [voluntiexBackend] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-04-11T20:20:01.779-05:00  INFO 31268 --- [voluntiexBackend] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@30084ab5
+2026-04-11T20:20:01.781-05:00  INFO 31268 --- [voluntiexBackend] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-04-11T20:20:01.851-05:00  INFO 31268 --- [voluntiexBackend] [  restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-04-11T20:20:02.799-05:00  INFO 31268 --- [voluntiexBackend] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-04-11T20:20:02.900-05:00  INFO 31268 --- [voluntiexBackend] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-11T20:20:03.420-05:00  WARN 31268 --- [voluntiexBackend] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-11T20:20:03.449-05:00  WARN 31268 --- [voluntiexBackend] [  restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 41d8cd71-fa59-4731-942c-20ae251c3d32
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-04-11T20:20:03.457-05:00  INFO 31268 --- [voluntiexBackend] [  restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-04-11T20:20:03.690-05:00  WARN 31268 --- [voluntiexBackend] [  restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'securityFilterChain' defined in class path resource [com/voluntiex/voluntiexBackend/configs/SecurityConfig.class]: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'securityFilterChain' threw exception with message: Error creating bean with name 'mvcHandlerMappingIntrospector' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Error creating bean with name 'resourceHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Failed to instantiate [org.springframework.web.servlet.HandlerMapping]: Factory method 'resourceHandlerMapping' threw exception with message: No more pattern data allowed after {*...} or ** pattern element
+2026-04-11T20:20:03.691-05:00  INFO 31268 --- [voluntiexBackend] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-04-11T20:20:03.696-05:00  INFO 31268 --- [voluntiexBackend] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-04-11T20:20:03.712-05:00  INFO 31268 --- [voluntiexBackend] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-04-11T20:20:03.716-05:00  INFO 31268 --- [voluntiexBackend] [  restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-04-11T20:20:03.730-05:00  INFO 31268 --- [voluntiexBackend] [  restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-04-11T20:20:03.753-05:00 ERROR 31268 --- [voluntiexBackend] [  restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Invalid mapping pattern detected:
+/swagger-ui/**/*swagger-initializer.js
+           ^
+No more pattern data allowed after {*...} or ** pattern element
+
+Action:
+
+Fix this pattern in your application or switch to the legacy parser implementation with 'spring.mvc.pathmatch.matching-strategy=ant_path_matcher'.
+

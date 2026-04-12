@@ -1,0 +1,405 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.2)
+
+2026-04-11T20:22:23.106-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] c.v.v.VoluntiexBackendApplication        : Starting VoluntiexBackendApplication using Java 21.0.3 with PID 31360 (C:\Users\orica\Desktop\TFM\backend\voluntiexBackend\target\classes started by Oriel in C:\Users\orica\Desktop\TFM\backend\voluntiexBackend)
+2026-04-11T20:22:23.109-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] c.v.v.VoluntiexBackendApplication        : No active profile set, falling back to 1 default profile: "default"
+2026-04-11T20:22:23.147-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-04-11T20:22:23.148-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-04-11T20:22:24.085-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-11T20:22:24.157-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 60 ms. Found 6 JPA repository interfaces.
+2026-04-11T20:22:24.750-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-04-11T20:22:24.763-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-11T20:22:24.764-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2026-04-11T20:22:24.805-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-04-11T20:22:24.806-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1658 ms
+2026-04-11T20:22:24.945-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-04-11T20:22:24.998-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.5.Final
+2026-04-11T20:22:25.029-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-04-11T20:22:25.259-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-04-11T20:22:25.286-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-04-11T20:22:25.604-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@44a4f750
+2026-04-11T20:22:25.606-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-04-11T20:22:25.685-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-04-11T20:22:26.651-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-04-11T20:22:26.767-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-11T20:22:27.190-05:00  WARN 31360 --- [voluntiexBackend] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-11T20:22:27.220-05:00  WARN 31360 --- [voluntiexBackend] [  restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 727b355c-6076-4dea-97a0-e197ab3d0d1f
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-04-11T20:22:27.227-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-04-11T20:22:27.515-05:00 DEBUG 31360 --- [voluntiexBackend] [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CorsFilter, LogoutFilter, JwtTokenFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+2026-04-11T20:22:27.866-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-04-11T20:22:27.899-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-04-11T20:22:27.907-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] c.v.v.VoluntiexBackendApplication        : Started VoluntiexBackendApplication in 5.151 seconds (process running for 5.566)
+2026-04-11T20:22:27.910-05:00  WARN 31360 --- [voluntiexBackend] [  restartedMain] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-04-11T20:23:22.460-05:00  INFO 31360 --- [voluntiexBackend] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 32 class path changes (0 additions, 32 deletions, 0 modifications)
+2026-04-11T20:23:22.464-05:00  INFO 31360 --- [voluntiexBackend] [       Thread-5] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-11T20:23:22.477-05:00  INFO 31360 --- [voluntiexBackend] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-04-11T20:23:22.483-05:00  INFO 31360 --- [voluntiexBackend] [       Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-04-11T20:23:22.486-05:00  INFO 31360 --- [voluntiexBackend] [       Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-04-11T20:23:22.501-05:00  INFO 31360 --- [voluntiexBackend] [       Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.2)
+
+2026-04-11T20:23:22.627-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] c.v.v.VoluntiexBackendApplication        : Starting VoluntiexBackendApplication using Java 21.0.3 with PID 31360 (C:\Users\orica\Desktop\TFM\backend\voluntiexBackend\target\classes started by Oriel in C:\Users\orica\Desktop\TFM\backend\voluntiexBackend)
+2026-04-11T20:23:22.628-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] c.v.v.VoluntiexBackendApplication        : No active profile set, falling back to 1 default profile: "default"
+2026-04-11T20:23:22.879-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-11T20:23:22.882-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 0 JPA repository interfaces.
+2026-04-11T20:23:22.993-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-04-11T20:23:22.996-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-11T20:23:22.996-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2026-04-11T20:23:23.023-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-04-11T20:23:23.024-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 394 ms
+2026-04-11T20:23:23.077-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-04-11T20:23:23.082-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-04-11T20:23:23.095-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-04-11T20:23:23.098-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2026-04-11T20:23:23.135-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6031f81e
+2026-04-11T20:23:23.135-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2026-04-11T20:23:23.140-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
+	Database driver: undefined/unknown
+	Database version: 8.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-04-11T20:23:23.169-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-04-11T20:23:23.169-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-11T20:23:23.205-05:00  WARN 31360 --- [voluntiexBackend] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-11T20:23:23.435-05:00  WARN 31360 --- [voluntiexBackend] [  restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: fa4f695d-b8bb-4185-aa10-3d92dd3bd76a
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-04-11T20:23:23.455-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-04-11T20:23:23.494-05:00 DEBUG 31360 --- [voluntiexBackend] [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CsrfFilter, LogoutFilter, UsernamePasswordAuthenticationFilter, DefaultResourcesFilter, DefaultLoginPageGeneratingFilter, DefaultLogoutPageGeneratingFilter, BasicAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+2026-04-11T20:23:23.520-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-04-11T20:23:23.538-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-04-11T20:23:23.544-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] c.v.v.VoluntiexBackendApplication        : Started VoluntiexBackendApplication in 0.954 seconds (process running for 61.204)
+2026-04-11T20:23:23.546-05:00  WARN 31360 --- [voluntiexBackend] [  restartedMain] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-04-11T20:23:23.552-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+   SpringBootWebSecurityConfiguration.SecurityFilterChainConfiguration matched:
+      - AllNestedConditions 2 matched 0 did not; NestedCondition on DefaultWebSecurityCondition.Beans @ConditionalOnMissingBean (types: org.springframework.security.web.SecurityFilterChain; SearchStrategy: all) did not find any beans; NestedCondition on DefaultWebSecurityCondition.Classes @ConditionalOnClass found required classes 'org.springframework.security.web.SecurityFilterChain', 'org.springframework.security.config.annotation.web.builders.HttpSecurity' (DefaultWebSecurityCondition)
+
+
+Negative matches:
+-----------------
+
+    None
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+2026-04-11T20:23:25.796-05:00  INFO 31360 --- [voluntiexBackend] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 32 class path changes (32 additions, 0 deletions, 0 modifications)
+2026-04-11T20:23:25.798-05:00  INFO 31360 --- [voluntiexBackend] [       Thread-7] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-11T20:23:25.807-05:00  INFO 31360 --- [voluntiexBackend] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-04-11T20:23:25.810-05:00  INFO 31360 --- [voluntiexBackend] [       Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-04-11T20:23:25.810-05:00  INFO 31360 --- [voluntiexBackend] [       Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2026-04-11T20:23:25.818-05:00  INFO 31360 --- [voluntiexBackend] [       Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.2)
+
+2026-04-11T20:23:25.904-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] c.v.v.VoluntiexBackendApplication        : Starting VoluntiexBackendApplication using Java 21.0.3 with PID 31360 (C:\Users\orica\Desktop\TFM\backend\voluntiexBackend\target\classes started by Oriel in C:\Users\orica\Desktop\TFM\backend\voluntiexBackend)
+2026-04-11T20:23:25.905-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] c.v.v.VoluntiexBackendApplication        : No active profile set, falling back to 1 default profile: "default"
+2026-04-11T20:23:26.142-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-11T20:23:26.162-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 6 JPA repository interfaces.
+2026-04-11T20:23:26.257-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-04-11T20:23:26.258-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-11T20:23:26.258-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2026-04-11T20:23:26.277-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-04-11T20:23:26.277-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 370 ms
+2026-04-11T20:23:26.312-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-04-11T20:23:26.315-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-04-11T20:23:26.325-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-04-11T20:23:26.326-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2026-04-11T20:23:26.346-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3a586c91
+2026-04-11T20:23:26.346-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2026-04-11T20:23:26.348-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-3)']
+	Database driver: undefined/unknown
+	Database version: 8.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-04-11T20:23:26.482-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-04-11T20:23:26.556-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-11T20:23:26.709-05:00  WARN 31360 --- [voluntiexBackend] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-11T20:23:26.718-05:00  WARN 31360 --- [voluntiexBackend] [  restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 758d87fb-e37b-48a8-b31b-432d14aeccd7
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-04-11T20:23:26.719-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-04-11T20:23:26.795-05:00 DEBUG 31360 --- [voluntiexBackend] [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CorsFilter, LogoutFilter, JwtTokenFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+2026-04-11T20:23:26.873-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-04-11T20:23:26.882-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-04-11T20:23:26.885-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] c.v.v.VoluntiexBackendApplication        : Started VoluntiexBackendApplication in 1.004 seconds (process running for 64.545)
+2026-04-11T20:23:26.886-05:00  WARN 31360 --- [voluntiexBackend] [  restartedMain] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-04-11T20:23:26.887-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+    None
+
+
+Negative matches:
+-----------------
+
+   SpringBootWebSecurityConfiguration.SecurityFilterChainConfiguration:
+      Did not match:
+         - AllNestedConditions 1 matched 1 did not; NestedCondition on DefaultWebSecurityCondition.Beans @ConditionalOnMissingBean (types: org.springframework.security.web.SecurityFilterChain; SearchStrategy: all) found beans of type 'org.springframework.security.web.SecurityFilterChain' securityFilterChain; NestedCondition on DefaultWebSecurityCondition.Classes @ConditionalOnClass found required classes 'org.springframework.security.web.SecurityFilterChain', 'org.springframework.security.config.annotation.web.builders.HttpSecurity' (DefaultWebSecurityCondition)
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+2026-04-11T20:24:24.507-05:00  INFO 31360 --- [voluntiexBackend] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 33 class path changes (0 additions, 32 deletions, 1 modification)
+2026-04-11T20:24:24.508-05:00  INFO 31360 --- [voluntiexBackend] [      Thread-11] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-11T20:24:24.518-05:00  INFO 31360 --- [voluntiexBackend] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-04-11T20:24:24.520-05:00  INFO 31360 --- [voluntiexBackend] [      Thread-11] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-04-11T20:24:24.520-05:00  INFO 31360 --- [voluntiexBackend] [      Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2026-04-11T20:24:24.532-05:00  INFO 31360 --- [voluntiexBackend] [      Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.2)
+
+2026-04-11T20:24:24.619-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] c.v.v.VoluntiexBackendApplication        : Starting VoluntiexBackendApplication using Java 21.0.3 with PID 31360 (C:\Users\orica\Desktop\TFM\backend\voluntiexBackend\target\classes started by Oriel in C:\Users\orica\Desktop\TFM\backend\voluntiexBackend)
+2026-04-11T20:24:24.619-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] c.v.v.VoluntiexBackendApplication        : No active profile set, falling back to 1 default profile: "default"
+2026-04-11T20:24:24.838-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-11T20:24:24.841-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 0 JPA repository interfaces.
+2026-04-11T20:24:24.971-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-04-11T20:24:24.972-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-11T20:24:24.973-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2026-04-11T20:24:25.005-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-04-11T20:24:25.005-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 384 ms
+2026-04-11T20:24:25.062-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-04-11T20:24:25.068-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-04-11T20:24:25.083-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-04-11T20:24:25.085-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2026-04-11T20:24:25.119-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-4 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1120f1ff
+2026-04-11T20:24:25.120-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2026-04-11T20:24:25.124-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-4)']
+	Database driver: undefined/unknown
+	Database version: 8.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-04-11T20:24:25.155-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-04-11T20:24:25.156-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-11T20:24:25.190-05:00  WARN 31360 --- [voluntiexBackend] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-11T20:24:25.434-05:00  WARN 31360 --- [voluntiexBackend] [  restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: bf6f314d-3022-4359-a8e4-9f5658391967
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-04-11T20:24:25.436-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-04-11T20:24:25.471-05:00 DEBUG 31360 --- [voluntiexBackend] [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CsrfFilter, LogoutFilter, UsernamePasswordAuthenticationFilter, DefaultResourcesFilter, DefaultLoginPageGeneratingFilter, DefaultLogoutPageGeneratingFilter, BasicAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+2026-04-11T20:24:25.488-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-04-11T20:24:25.504-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-04-11T20:24:25.510-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] c.v.v.VoluntiexBackendApplication        : Started VoluntiexBackendApplication in 0.914 seconds (process running for 123.169)
+2026-04-11T20:24:25.511-05:00  WARN 31360 --- [voluntiexBackend] [  restartedMain] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-04-11T20:24:25.512-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+   SpringBootWebSecurityConfiguration.SecurityFilterChainConfiguration matched:
+      - AllNestedConditions 2 matched 0 did not; NestedCondition on DefaultWebSecurityCondition.Beans @ConditionalOnMissingBean (types: org.springframework.security.web.SecurityFilterChain; SearchStrategy: all) did not find any beans; NestedCondition on DefaultWebSecurityCondition.Classes @ConditionalOnClass found required classes 'org.springframework.security.web.SecurityFilterChain', 'org.springframework.security.config.annotation.web.builders.HttpSecurity' (DefaultWebSecurityCondition)
+
+
+Negative matches:
+-----------------
+
+    None
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+2026-04-11T20:24:27.351-05:00  INFO 31360 --- [voluntiexBackend] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 32 class path changes (32 additions, 0 deletions, 0 modifications)
+2026-04-11T20:24:27.353-05:00  INFO 31360 --- [voluntiexBackend] [      Thread-15] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-11T20:24:27.365-05:00  INFO 31360 --- [voluntiexBackend] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-04-11T20:24:27.368-05:00  INFO 31360 --- [voluntiexBackend] [      Thread-15] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-04-11T20:24:27.369-05:00  INFO 31360 --- [voluntiexBackend] [      Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2026-04-11T20:24:27.384-05:00  INFO 31360 --- [voluntiexBackend] [      Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.2)
+
+2026-04-11T20:24:27.518-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] c.v.v.VoluntiexBackendApplication        : Starting VoluntiexBackendApplication using Java 21.0.3 with PID 31360 (C:\Users\orica\Desktop\TFM\backend\voluntiexBackend\target\classes started by Oriel in C:\Users\orica\Desktop\TFM\backend\voluntiexBackend)
+2026-04-11T20:24:27.518-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] c.v.v.VoluntiexBackendApplication        : No active profile set, falling back to 1 default profile: "default"
+2026-04-11T20:24:27.839-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-11T20:24:27.867-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 26 ms. Found 6 JPA repository interfaces.
+2026-04-11T20:24:28.040-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-04-11T20:24:28.042-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-11T20:24:28.042-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2026-04-11T20:24:28.076-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-04-11T20:24:28.077-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 556 ms
+2026-04-11T20:24:28.142-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-04-11T20:24:28.145-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-04-11T20:24:28.162-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-04-11T20:24:28.163-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2026-04-11T20:24:28.190-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-5 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7842ecb
+2026-04-11T20:24:28.190-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2026-04-11T20:24:28.192-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-5)']
+	Database driver: undefined/unknown
+	Database version: 8.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-04-11T20:24:28.439-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-04-11T20:24:28.549-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-11T20:24:28.762-05:00  WARN 31360 --- [voluntiexBackend] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-11T20:24:28.773-05:00  WARN 31360 --- [voluntiexBackend] [  restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 71c83c3c-c37f-46ae-9b72-c02962892fff
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-04-11T20:24:28.774-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-04-11T20:24:28.888-05:00 DEBUG 31360 --- [voluntiexBackend] [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CorsFilter, LogoutFilter, JwtTokenFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+2026-04-11T20:24:28.985-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-04-11T20:24:28.996-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-04-11T20:24:29.001-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] c.v.v.VoluntiexBackendApplication        : Started VoluntiexBackendApplication in 1.52 seconds (process running for 126.66)
+2026-04-11T20:24:29.002-05:00  WARN 31360 --- [voluntiexBackend] [  restartedMain] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-04-11T20:24:29.003-05:00  INFO 31360 --- [voluntiexBackend] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+    None
+
+
+Negative matches:
+-----------------
+
+   SpringBootWebSecurityConfiguration.SecurityFilterChainConfiguration:
+      Did not match:
+         - AllNestedConditions 1 matched 1 did not; NestedCondition on DefaultWebSecurityCondition.Beans @ConditionalOnMissingBean (types: org.springframework.security.web.SecurityFilterChain; SearchStrategy: all) found beans of type 'org.springframework.security.web.SecurityFilterChain' securityFilterChain; NestedCondition on DefaultWebSecurityCondition.Classes @ConditionalOnClass found required classes 'org.springframework.security.web.SecurityFilterChain', 'org.springframework.security.config.annotation.web.builders.HttpSecurity' (DefaultWebSecurityCondition)
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
